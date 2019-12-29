@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportbarangmas_uas_oop_181080200213" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c21a3a90-76fd-4745-95a3-dd4ca2fc43a0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select a.kd_brg, a.nm_brg, a.kd_sat, a.hrg_satuan, b.kd_sat, b.ket_sat from barang a, satuan b where a.kd_sat=b.kd_sat order by a.kd_brg]]>
+	</queryString>
+	<field name="kd_brg" class="java.lang.String"/>
+	<field name="nm_brg" class="java.lang.String"/>
+	<field name="kd_sat" class="java.lang.String"/>
+	<field name="hrg_satuan" class="java.math.BigDecimal"/>
+	<field name="ket_sat" class="java.lang.String"/>
+	<group name="Kode Barang">
+		<groupExpression><![CDATA[$F{kd_brg}]]></groupExpression>
+		<groupHeader>
+			<band height="89">
+				<staticText>
+					<reportElement x="12" y="12" width="100" height="20" uuid="0ad998f1-0d51-4629-8e92-bbfc25db32d7"/>
+					<text><![CDATA[Kode Satuan :]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="112" y="12" width="100" height="20" uuid="43fd6395-8742-47b0-81a4-9ce256489e1d"/>
+					<textFieldExpression><![CDATA[$F{kd_sat}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="212" y="12" width="100" height="20" uuid="3c3f12c9-8584-4135-97ec-6136757b9aa6"/>
+					<textFieldExpression><![CDATA[$F{ket_sat}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="12" y="46" width="531" height="1" uuid="9a5620af-a21a-40b9-9e39-4349b9039365"/>
+				</line>
+				<rectangle>
+					<reportElement x="12" y="58" width="100" height="20" uuid="345682c4-7c1d-4c21-a8a3-d4f27f7161d1"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="165" y="58" width="232" height="20" uuid="50987044-0e22-4964-8e3f-ed49387e6fb9"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="443" y="58" width="100" height="20" uuid="9f190dae-4bd6-436f-b59a-0e4e250a27a5"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="12" y="58" width="100" height="20" uuid="21250d22-d4a2-47e5-990b-8d501b7b4dec"/>
+					<text><![CDATA[Kode Barang]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="165" y="58" width="232" height="20" uuid="ad1c1abe-fb55-4157-8ecb-2fc31fecb7c3"/>
+					<text><![CDATA[Nama Barang]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="443" y="58" width="100" height="20" uuid="9fd42d90-1494-44fb-9603-4f67d4bd7991"/>
+					<text><![CDATA[Harga Barang]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="83">
+				<staticText>
+					<reportElement x="365" y="0" width="164" height="20" uuid="68015bee-f140-44db-a602-02a50483149c"/>
+					<text><![CDATA[Kepala Devisi Pemeliharaan,]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="365" y="60" width="164" height="20" uuid="dd29798f-53c7-4493-86ef-88b5d732a8d2"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Mr.Ambigous]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="165" y="23" width="232" height="20" uuid="de4a19f6-637e-495b-959c-2c687056b640"/>
+				<textElement textAlignment="Center">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA BARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="165" y="43" width="232" height="20" uuid="900ca58f-f7c6-4321-95f8-55da56bd9677"/>
+				<textElement textAlignment="Center">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PT.AMBIGOUS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="5" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="5" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="12" y="0" width="100" height="20" uuid="f03c9b6d-2219-490e-bdda-f3b6a91e72db"/>
+				<textFieldExpression><![CDATA[$V{Kode Barang_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="165" y="0" width="232" height="20" uuid="525df78a-476a-4c73-8544-8b5780af09ba"/>
+				<textFieldExpression><![CDATA[$F{nm_brg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="0" width="100" height="20" uuid="1b127a0b-b9f7-44e0-93cb-ab1ff2d6b5c7"/>
+				<textFieldExpression><![CDATA[$F{hrg_satuan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="5" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="9" splitType="Stretch"/>
+	</summary>
+</jasperReport>

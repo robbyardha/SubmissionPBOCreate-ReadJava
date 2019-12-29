@@ -1,0 +1,1 @@
+select a.kd_brg, a.nm_brg, a.kd_sat, a.hrg_satuan, b.kd_sat, b.ket_sat from barang a, satuan b where a.kd_sat=b.kd_sat order by a.kd_brg
